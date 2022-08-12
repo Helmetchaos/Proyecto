@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IniciBasic">
         <activity
+            android:name=".MiUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".Comisarias"
+            android:exported="false" />
+        <activity
+            android:name=".MisIncidencias"
+            android:exported="false" />
+        <activity
+            android:name=".MenuPrincipal"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
