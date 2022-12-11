@@ -34,8 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Contraseña"/>
+            android:hint="Contraseña"
+            android:inputType="textPersonName|textPassword" />
     </LinearLayout>
 
     <LinearLayout

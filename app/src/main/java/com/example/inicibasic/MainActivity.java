@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Registrado correctamente", Toast.LENGTH_SHORT).show();
                 }else{
                     //task.getException();
-                    Toast.makeText(MainActivity.this, "Fallo al registrarse", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Fallo al registrarse, la contraseña tiene que ser de mas de 6 digitos", Toast.LENGTH_SHORT).show();
                 }
 
             }
