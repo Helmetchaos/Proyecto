@@ -43,13 +43,6 @@
         android:layout_weight="1">
 
         <Button
-            android:id="@+id/botonusuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mi Usuario"
-            android:onClick="usuarios"/>
-
-        <Button
             android:id="@+id/logOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

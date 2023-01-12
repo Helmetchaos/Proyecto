@@ -20,8 +20,8 @@
 
     <EditText
         android:id="@+id/edDescripcion"
-        android:layout_width="252dp"
-        android:layout_height="200dp"
+        android:layout_width="301dp"
+        android:layout_height="261dp"
         android:hint="Describa su incidencia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,14 +34,14 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="registrar"
         android:text="Registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edDescripcion"
-        app:layout_constraintVertical_bias="0.392"
-        android:onClick="registrar"/>
+        app:layout_constraintVertical_bias="0.077" />
 
     <Button
         android:id="@+id/button2"
