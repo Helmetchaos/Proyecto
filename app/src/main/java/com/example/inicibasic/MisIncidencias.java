@@ -49,10 +49,10 @@ public class MisIncidencias extends AppCompatActivity {
         Map<String, Object> user = new HashMap<>();
         user.put(titulo, descripcion);
 
-        db.collection("users").add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        db.collection("users").document(titulo).set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
+                    public void onSuccess(Void aVoid)  {
                         Toast.makeText(MisIncidencias.this, "Registro guardado", Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -67,11 +67,7 @@ public class MisIncidencias extends AppCompatActivity {
 
     public void consultar(View view) {
 
-        String titulo=editTitulo.getText().toString();
-        String descripcion=editDesc.getText().toString();
-
-        Map<String, Object> user = new HashMap<>();
-        user.put(titulo, descripcion);
+        editDesc.setText("");
 
         db.collection("users")
                 .get()
@@ -81,8 +77,7 @@ public class MisIncidencias extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
-                                editTitulo.setText(document.getId().toString());
-                                editDesc.setText(document.getData().toString());
+                                editDesc.append(document.getData().toString()+"\n");
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
@@ -93,5 +88,24 @@ public class MisIncidencias extends AppCompatActivity {
     }
 
     public void eliminar(View view) {
+
+        String titulo=editTitulo.getText().toString();
+        String descripcion=editDesc.getText().toString();
+
+        db.collection("users").document(titulo)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                        Toast.makeText(MisIncidencias.this, "El documento ha sido eliminado", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error deleting document", e);
+                    }
+                });
     }
 }

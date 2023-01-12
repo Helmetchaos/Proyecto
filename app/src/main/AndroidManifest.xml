@@ -33,9 +33,6 @@
             android:exported="false"
             android:label="@string/title_activity_comisarias" />
         <activity
-            android:name=".MiUsuario"
-            android:exported="false" />
-        <activity
             android:name=".MisIncidencias"
             android:exported="false" />
         <activity

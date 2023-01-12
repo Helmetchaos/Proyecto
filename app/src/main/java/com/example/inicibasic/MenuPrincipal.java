@@ -40,11 +40,6 @@ public class MenuPrincipal extends AppCompatActivity {
         startActivity(intent1);
     }
 
-    public void usuarios(View view) {
-        Intent intent2=new Intent(this, MiUsuario.class);
-        startActivity(intent2);
-    }
-
     public void logOut(View view) {
         mAuth.signOut();
         Intent intent3=new Intent(this, MainActivity.class);
