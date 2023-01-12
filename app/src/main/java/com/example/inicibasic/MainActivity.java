@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inisesion);
 
         mAuth=FirebaseAuth.getInstance();
-        edEmail=(EditText) findViewById(R.id.editEmail);
-        edContra=(EditText) findViewById(R.id.editPass);
+        edEmail=(EditText) findViewById(R.id.et_email);
+        edContra=(EditText) findViewById(R.id.et_pass);
 
     }
 
@@ -48,12 +48,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Inicio de sesion correcto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(MainActivity.this, MenuPrincipal.class);
                     startActivity(intent);
                 }else{
                     task.getException();
-                    Toast.makeText(MainActivity.this, "Error al iniciar sesion", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Error al iniciar sesión", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Registrado correctamente", Toast.LENGTH_SHORT).show();
                 }else{
                     //task.getException();
-                    Toast.makeText(MainActivity.this, "Fallo al registrarse, la contraseña tiene que ser de mas de 6 digitos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Fallo al registrarse, la contraseña tiene que ser de 6 o más digitos", Toast.LENGTH_SHORT).show();
                 }
 
             }
